@@ -7,7 +7,8 @@ function onInit() {
     gElCanvas = document.querySelector('.meme-canvas');
     gCtx = gElCanvas.getContext('2d')
     drawImg();
-    onWriteText()
+    onWriteText();
+    renderGallery();
     // resizeCanvas();
 }
 
