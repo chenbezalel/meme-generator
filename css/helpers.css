@@ -1,0 +1,29 @@
+/* flex */
+
+.flex {
+    display: flex;
+}
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.flex.space-around {
+    justify-content: space-around;
+}   
+
+.flex.align-center {
+    align-items: center;
+}
+
+.flex.dir-column {
+    flex-direction: column;
+}
+
+/* list */
+
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
