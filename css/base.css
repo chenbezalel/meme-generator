@@ -3,16 +3,25 @@
 }
 
 body {
-    background-color: rgb(228, 189, 189);
+    background-color: rgb(243, 232, 232);
     font-family: poppins;
 }
+
+/* .page-container{
+    margin: 10px auto;
+    border-radius: 20px;
+    border: 3px solid grey;
+    padding: 20px;
+    background-color: rgb(238, 213, 213);
+    box-shadow: 0px 2px 10px 5px #8a8888;
+} */
 
 
 /* nav */
 
 .main-nav {
     height: 75px;
-    margin: 10px auto 30px;
+    margin: 0px auto 30px;
     background: linear-gradient(90deg, rgba(255, 141, 129, 1) 0%, rgba(237, 177, 117, 1) 61%, rgba(255, 227, 150, 1) 100%);
     border-radius: 37px;
     padding-inline: 120px;
@@ -32,21 +41,23 @@ body {
 }
 
 canvas, .control-box {
-    box-shadow: 1px 10px 0 rgba(78, 78, 78, .2), inset 0 10px 0 rgba(78, 78, 78, .3);
+    margin-top: 10px;
+    /* box-shadow: 1px 10px 0 rgba(78, 78, 78, .2), inset 0 10px 0 rgba(78, 78, 78, .3); */
+    box-shadow: 0px 0px 5px 5px #c0b9b9;
     border-radius: 30px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .control-box {
     width: 500px;
-    height: 545px;
+    height: 500px;
     padding: 25px 40px;
 }
 
 .control-box input {
     width: 26.2rem;
     height: 60px;
-    box-shadow: 1px 5px 0 #bbc4d1, inset 0 5px 0 #ffffff;
+    box-shadow: 1px 4px 0 #a6aaaf, inset 0 5px 0 #ffffff;
     border-radius: 28px;
     background-color: #ffffff;
     font-family: poppins;
@@ -100,4 +111,8 @@ img {
     border-radius: 20px;
     box-shadow: 0px 2px 15px 5px #ffffff;
     cursor: pointer;
+}
+
+img:hover{
+    box-shadow: 0px 2px 15px 5px #5e5c5c;
 }

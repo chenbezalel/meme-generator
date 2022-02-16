@@ -6,10 +6,13 @@ var gCtx;
 function onInit() {
     gElCanvas = document.querySelector('.meme-canvas');
     gCtx = gElCanvas.getContext('2d')
-    drawImg();
-    onWriteText();
     renderGallery();
     // resizeCanvas();
+}
+
+function renderMeme(){
+    drawImg();
+    drawText();
 }
 
 
@@ -21,7 +24,7 @@ function drawImg() {
     }
 }
 
-function onWriteText() {
+function drawText() {
     var elTextLine = document.querySelector('input[name="text-line"]');
     elTextLine.addEventListener('keyup', function () {
         gCtx.save();

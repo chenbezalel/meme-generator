@@ -9,44 +9,47 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body class= "main-layout" onload="onInit()">
+<body class="main-layout" onload="onInit()">
 
-    <header class="main-header">
-        <nav class="main-nav flex space-between">
-            <div class="logo flex align-center">Logo</div>
-            <div class="nav-content flex space-between">
-                <ul class="clean-list flex space-between align-center">
-                    <li>Gallery</li>
-                    <li>Memes</li>
-                    <li>About</li>
-                </ul>
+    <div class="page-container">
+
+        <header class="main-header">
+            <nav class="main-nav flex space-between">
+                <div class="logo flex align-center">Logo</div>
+                <div class="nav-content flex space-between">
+                    <ul class="clean-list flex space-between align-center">
+                        <li>Gallery</li>
+                        <li>Memes</li>
+                        <li>About</li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <section class="gallery">
+            <div class="search-container">
+                <form class="search-form flex">
+                    <input type="search" placeholder="Search" class="search-field" />
+                    <button type="submit" class="search-button">
+                        <img src="icons/search-icon.png">
+                    </button>
+                </form>
             </div>
-        </nav>
-    </header>
-
-    <section class="gallery">
-        <div class="search-container">
-            <form class="search-form flex">
-                <input type="search" placeholder="Search" class="search-field" />
-                <button type="submit" class="search-button">
-                  <img src="icons/search-icon.png">
-                </button>
-              </form>
-        </div>
-        <section class="gallery-container">
-
+            <section class="gallery-container"></section>
         </section>
-    </section>
-    
-    
-    <div class="editor editor-layout flex space-between">
-        <canvas width="500px" height="545px" class="meme-canvas"></canvas>
-        <div class="control-box">
-            <input type="text" class="text-line" name="text-line" placeholder="Your text">
-            <section class="line-control-btns"></section>
-            <section class="line-design-btns"></section>
+
+
+        <div class="editor editor-layout flex space-between">
+            <canvas width="500px" height="500px" class="meme-canvas"></canvas>
+            <div class="control-box">
+                <input type="text" class="text-line" name="text-line" placeholder="Your text">
+                <section class="line-control-btns"></section>
+                <section class="line-design-btns"></section>
+            </div>
         </div>
+
     </div>
+
 
     <script src="js/services/util-service.js"></script>
     <script src="js/services/storage-service.js"></script>

@@ -33,6 +33,10 @@ gImgs = [
     _createImg('images/8.jpg', ['funny', 'listening'])
 ]
 
+function getMeme() {
+    return gMeme;
+}
+
 function getImages() {
     return gImgs;
 }
@@ -45,5 +49,9 @@ function _createImg(url, keyWords) {
     }
 
     return img;
+}
+
+function setImg(imgId){
+    gMeme.selectedImgId = imgId;
 }
 
