@@ -3,7 +3,8 @@
 }
 
 body {
-    background-color: rgb(134, 134, 134);
+    background-color: rgb(228, 189, 189);
+    font-family: poppins;
 }
 
 /* nav */
@@ -14,6 +15,8 @@ body {
     background: linear-gradient(90deg, rgba(255, 141, 129, 1) 0%, rgba(237, 177, 117, 1) 61%, rgba(255, 227, 150, 1) 100%);
     border-radius: 37px;
     padding-inline: 120px;
+    color: #ffffff;
+    font-size: 1.3rem;
 }
 
 .nav-content ul>* {
