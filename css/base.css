@@ -67,6 +67,57 @@ canvas, .control-box {
     text-transform: uppercase;
 }
 
+.line-control-btns {
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+}
+
+.btn {
+    margin-inline: 10px;
+    border: none;
+    width: 56px;
+    height: 51px;
+    box-shadow: 1px 5px 0 rgba(92, 92, 92, 0.55), inset 0 5px 0 rgba(255, 255, 255, 0.58);
+    border-radius: 10px;
+    background-color: #ffffff;
+    background-color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+}
+
+.switch-lines {
+    background-color: #ebeef3;
+    background-image: linear-gradient(-38deg, #66c4dc 0%, #40b1ce 50%, #0c98bb 100%);
+    box-shadow: 1px 5px 0 #048b97, inset 0 5px 0 rgba(255, 255, 255, 0.58);
+}
+
+.add-line {
+    box-shadow: 1px 5px 0 #015d33, inset 0 5px 0 rgba(255, 255, 255, 0.58);
+    background-color: #ebeef3;
+    background-image: linear-gradient(-38deg, #42eb5c 0%, #37b34a 100%);
+}
+
+.line-design-btns{
+    width: 450px;
+    height: 150px;
+    border-radius: 15px;
+    background-color: rgb(228, 171, 171);
+    padding: 20px;
+}
+
+.remove-line {
+    box-shadow: 1px 5px 0 #8c0606, inset 0 5px 0 rgba(255, 255, 255, 0.58);
+    background-color: #ebeef3;
+    background-image: linear-gradient(-38deg, #cf1d37 0%, #cf1d37 1%, #f05036 100%);
+}
+
+.btn img {
+    object-fit: cover;
+    width: 30px;
+    height: 30px;
+}
+
 
 /* gallery */
 
@@ -105,7 +156,7 @@ canvas, .control-box {
     gap: 30px;
 }
 
-img {
+.gallery-container img {
     height: 200px;
     object-fit: cover;
     border-radius: 20px;
@@ -113,6 +164,6 @@ img {
     cursor: pointer;
 }
 
-img:hover{
+.gallery-container img:hover {
     box-shadow: 0px 2px 15px 5px #5e5c5c;
 }

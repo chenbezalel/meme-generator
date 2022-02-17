@@ -10,14 +10,16 @@ var gMeme;
 
 gMeme = {
     selectedImgId: null,
-    selectedLineIdx: null,
+    selectedLineIdx: 0,
 
     lines: [
         {
             txt: '',
-            size: 20,
+            size: 45,
             align: 'left',
-            color: 'red'
+            color: 'white',
+            stroke: 'black',
+            font: 'impact'
         }
     ]
 }
@@ -41,6 +43,18 @@ function getImages() {
     return gImgs;
 }
 
+function getImgSelectedUrl(){
+    var selectedImg = gImgs.find(img => img.id === gMeme.selectedImgId);
+    return selectedImg.url;
+}
+
+function setLineText(){
+    var elTextLine = document.querySelector('input[name="text-line"]');
+    var textLine = elTextLine.value;
+    var meme = getMeme();
+    meme.lines[meme.selectedLineIdx].txt = textLine;
+}
+
 function _createImg(url, keyWords) {
     var img = {
         id: makeId(),
@@ -53,5 +67,13 @@ function _createImg(url, keyWords) {
 
 function setImg(imgId){
     gMeme.selectedImgId = imgId;
+}
+
+function increaseSize(){
+    gMeme.lines[gMeme.selectedLineIdx].size++;
+}
+
+function decreaseSize(){
+    gMeme.lines[gMeme.selectedLineIdx].size--;
 }
 

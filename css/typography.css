@@ -7,3 +7,8 @@
     font-family: poppins-bold;
     src: url(../fonts/Poppins/Poppins-Bold.ttf);
 }
+
+@font-face{
+    font-family: impact;
+    src: url(../fonts/impact/impact.ttf);
+}
