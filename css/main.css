@@ -1,17 +1,8 @@
-/* setup */
-@import url(typography.css);
-/* @import url(setup/vars.css); */
 
-/* basic */
+@import url(typography.css);
 @import url(base.css);
 @import url(helpers.css);
 @import url(layout.css);
-/* @import url(basic/mq.css); */
+@import url(media-query.css);
 
-/* components */
-/* @import url(components/main-header.css);
-@import url(components/main-content.css);
-@import url(components/main-footer.css);
-@import url(components/modal.css);
-@import url(components/screen.css); */
 

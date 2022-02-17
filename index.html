@@ -13,13 +13,14 @@
 
         <header class="main-header">
             <nav class="main-nav flex space-between">
-                <div class="logo flex align-center">Logo</div>
+                <div class="logo flex align-center"><img src="logo/LOGO.png" alt=""></div>
                 <div class="nav-content flex space-between">
                     <ul class="clean-list flex space-between align-center">
                         <li>Gallery</li>
                         <li>Memes</li>
                         <li>About</li>
                     </ul>
+                    <button class="btn-menu" onclick="toggleMenu(this)">☰</button>
                 </div>
             </nav>
         </header>
@@ -38,13 +39,15 @@
 
 
         <div class="editor editor-layout flex space-between">
-            <canvas width="500px" height="500px" class="meme-canvas"></canvas>
+            <div class="canvas-container">
+                <canvas width="500px" height="500px" class="meme-canvas"></canvas>
+            </div>
             <div class="control-box">
                 <input type="text" class="text-line" name="text-line" placeholder="Your text" onchange="renderMeme()">
                 <section class="line-control-btns">
                     <button class="btn switch-lines" onclick="onSwitch()"><img src="icons/switch.png" alt=""></button>
                     <button class="btn add-line" onclick="onAddLine()"><img src="icons/add.png" alt=""></button>
-                    <button class="btn remove-line"><img src="icons/trash.png" alt=""></button>
+                    <button class="btn remove-line" onclick="onDelete()"><img src="icons/trash.png" alt=""></button>
                 </section>
                 <section class="line-design-btns flex wrap">
                     <button class="btn Increase-line" onclick="onIncrease()"><img src="icons/increase.png" alt=""></button>

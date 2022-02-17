@@ -4,42 +4,61 @@ var gKeywordSearchCountMap = {};
 var gImgs;
 var gMeme;
 
-gMeme = {
-    selectedImgId: null,
-    selectedLineIdx: 0,
+function createMeme() {
+    gMeme = {
+        selectedImgId: null,
+        selectedLineIdx: 0,
 
-    lines: [
-        {
-            txt: '',
-            size: 45,
-            align: 'left',
-            color: 'white',
-            stroke: 'black',
-            font: 'impact',
-            pos: {x: 100, y:70}
-        },
-        {
-            txt: '',
-            size: 45,
-            align: 'left',
-            color: 'white',
-            stroke: 'black',
-            font: 'impact',
-            pos: {x: 100, y:400}
-        }
+        lines: [
+            {
+                txt: '',
+                size: 45,
+                align: 'left',
+                color: 'white',
+                stroke: 'black',
+                font: 'impact',
+                pos: { x: 0, y: 0 }
+            }
+            // {
+            //     txt: '',
+            //     size: 45,
+            //     align: 'left',
+            //     color: 'white',
+            //     stroke: 'black',
+            //     font: 'impact',
+            //     pos: { x: 100, y: 400 }
+            // }
+        ]
+    }
+}
+
+function setDefultSettings() {
+    return {
+        txt: '',
+        size: 45,
+        align: 'left',
+        color: 'white',
+        stroke: 'black',
+        font: 'impact',
+        pos: { x: 0, y: 0 }
+    }
+
+}
+
+
+function createImgs() {
+    gImgs = [
+        _createImg('images/1.jpg', ['funny', 'politics']),
+        _createImg('images/2.jpg', ['cute', 'pets', 'dog', 'love']),
+        _createImg('images/3.jpg', ['cute', 'pets', 'baby', 'sleep', 'child', 'dog']),
+        _createImg('images/4.jpg', ['cat', 'sleep', 'funny', 'keyboard']),
+        _createImg('images/5.jpg', ['funny', 'strong', 'child']),
+        _createImg('images/6.jpg', ['funny', 'smart']),
+        _createImg('images/7.jpg', ['funny', 'baby', 'child', 'surprise']),
+        _createImg('images/8.jpg', ['funny', 'listening'])
     ]
 }
 
-gImgs = [
-    _createImg('images/1.jpg', ['funny', 'politics']),
-    _createImg('images/2.jpg', ['cute', 'pets', 'dog', 'love']),
-    _createImg('images/3.jpg', ['cute', 'pets', 'baby', 'sleep', 'child', 'dog']),
-    _createImg('images/4.jpg', ['cat', 'sleep', 'funny', 'keyboard']),
-    _createImg('images/5.jpg', ['funny', 'strong', 'child']),
-    _createImg('images/6.jpg', ['funny', 'smart']),
-    _createImg('images/7.jpg', ['funny', 'baby', 'child', 'surprise']),
-    _createImg('images/8.jpg', ['funny', 'listening'])
-]
 
 function getMeme() {
     return gMeme;

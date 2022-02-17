@@ -2,15 +2,23 @@
 
 var gElCanvas;
 var gCtx;
-var elTextLine = document.querySelector('input[name="text-line"]');
-elTextLine.addEventListener('keyup', onChangeText);
 var gPos;
+
 
 function onInit() {
     gElCanvas = document.querySelector('.meme-canvas');
-    gCtx = gElCanvas.getContext('2d')
+    gCtx = gElCanvas.getContext('2d');
+    createImgs();
+    createMeme();
     renderGallery();
-    // resizeCanvas();
+    addListenes();
+    getLinesPos();
+    resizeCanvas();
+}
+
+function addListenes() {
+    var elTextLine = document.querySelector('input[name="text-line"]');
+    elTextLine.addEventListener('keyup', onChangeText);
 }
 
 function onChangeText() {
@@ -37,14 +45,6 @@ function renderText() {
     meme.lines.forEach((line, idx) => drawText(idx, line.txt, line.pos.x, line.pos.y))
 }
 
-
-// function getLinePos(){
-//     var meme = getMeme();
-//     if (meme.selectedLineIdx === 0) gPos = {x: 100, y:70}
-//     if (meme.selectedLineIdx === 1) gPos = {x: 100, y: gElCanvas.width - 70}
-//     return gPos;
-// }
-
 function getLineSettings(idx) {
     var meme = getMeme();
     var color = meme.lines[idx].color;
@@ -60,7 +60,8 @@ function getLineSettings(idx) {
         size,
         font,
         align,
-        txt
+        txt,
+        stroke
         // pos
     }
 }
@@ -92,8 +93,26 @@ function onChangeColor(elColor) {
 function onAddLine() {
     var meme = getMeme();
     meme.selectedLineIdx++;
+    meme.lines.push(setDefultSettings());
+    getLinesPos();
     document.querySelector('input[name="text-line"]').value = '';
     renderMeme();
+}
+
+function getLinesPos() {
+    var meme = getMeme();
+    var currIdx = meme.selectedLineIdx;
+    var lines = meme.lines;
+    lines[currIdx].pos.x = gElCanvas.width / 6;
+
+    if (currIdx === 0) {
+        lines[currIdx].pos.y = gElCanvas.height * 0.1;
+    } else if (currIdx === 1) {
+        lines[currIdx].pos.y = gElCanvas.height * 0.9;
+    } else  {
+        lines[currIdx].pos.y = gElCanvas.height / (getRandomInt(2, 7));
+        console.log(lines[currIdx].pos.y);
+    }
 }
 
 function onSwitch() {
@@ -104,13 +123,24 @@ function onSwitch() {
     document.querySelector('input[name="text-line"]').value = currMeme.txt;
 }
 
+function onDelete() {
+    var meme = getMeme();
+    meme.lines.splice(meme.selectedLineIdx, 1);
+    document.querySelector('input[name="text-line"]').value = '';
+    renderMeme();
+}
 
-// function resizeCanvas() {
-    // function onChangeAlign(dir){
-    //     changeAlign(dir);
-    //     renderMeme();
-    // }
-//     var elContainer = document.querySelector('.canvas-container')
-//     gElCanvas.width = elContainer.offsetWidth
-//     gElCanvas.height = elContainer.offsetHeight
-// }
+
+function resizeCanvas() {
+    var elContainer = document.querySelector('.canvas-container')
+    gElCanvas.width = elContainer.offsetWidth
+    gElCanvas.height = elContainer.offsetHeight
+}
+
+function toggleMenu(elBtn) {
+    document.body.classList.toggle("menu-open");
+    if (elBtn.innerText === '☰') elBtn.innerText = 'X';
+    else if (elBtn.innerText === 'X') elBtn.innerText = '☰';
+    // elBtn.innerText = '☰'? 'X': '☰';
+
+}
