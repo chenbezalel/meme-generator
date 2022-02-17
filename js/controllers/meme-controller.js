@@ -104,7 +104,7 @@ function getLinesPos() {
     var currIdx = meme.selectedLineIdx;
     var lines = meme.lines;
     lines[currIdx].pos.x = gElCanvas.width / 6;
-
+    
     if (currIdx === 0) {
         lines[currIdx].pos.y = gElCanvas.height * 0.1;
     } else if (currIdx === 1) {
@@ -123,11 +123,12 @@ function onSwitch() {
     document.querySelector('input[name="text-line"]').value = currMeme.txt;
 }
 
+
+// not complite yet:
 function onDelete() {
     var meme = getMeme();
     meme.lines.splice(meme.selectedLineIdx, 1);
     document.querySelector('input[name="text-line"]').value = '';
-    getLinesPos();
     renderMeme();
 }
 
