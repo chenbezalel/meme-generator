@@ -49,9 +49,13 @@
                 <section class="line-design-btns flex wrap">
                     <button class="btn Increase-line" onclick="onIncrease()"><img src="icons/increase.png" alt=""></button>
                     <button class="btn decrease-line" onclick="onDecrease()"><img src="icons/decrease.png" alt=""></button>
-                    <button class="btn align-left" onclick="onChangeAlign('left')"><img src="icons/align-to-left.png" alt=""></button>
+                    <div class="color">
+                        <button class="btn color-btn"><img src="icons/paint-board-and-brush.png" alt=""></button>
+                        <input type="color" class="color-input" onchange="onChangeColor(this)">
+                    </div>
+                    <!-- <button class="btn align-left" onclick="onChangeAlign('left')"><img src="icons/align-to-left.png" alt=""></button>
                     <button class="btn align-center" onclick="onChangeAlign('center')"><img src="icons/center-text-alignment.png" alt=""></button>
-                    <button class="btn align-right" onclick="onChangeAlign('right')"><img src="icons/align-to-right.png" alt=""></button>
+                    <button class="btn align-right" onclick="onChangeAlign('right')"><img src="icons/align-to-right.png" alt=""></button> -->
                 </section>
             </div>
         </div>

@@ -83,10 +83,11 @@ function onDecrease(){
     renderMeme();
 }
 
-// function onChangeAlign(dir){
-//     changeAlign(dir);
-//     renderMeme();
-// }
+function onChangeColor(elColor){
+    changeColor(elColor.value);
+    renderMeme();
+}
+
 
 function onAddLine(){
     var meme = getMeme();
@@ -97,6 +98,10 @@ function onAddLine(){
 
 
 // function resizeCanvas() {
+    // function onChangeAlign(dir){
+    //     changeAlign(dir);
+    //     renderMeme();
+    // }
 //     var elContainer = document.querySelector('.canvas-container')
 //     gElCanvas.width = elContainer.offsetWidth
 //     gElCanvas.height = elContainer.offsetHeight

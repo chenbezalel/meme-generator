@@ -83,6 +83,10 @@ function decreaseSize() {
     gMeme.lines[gMeme.selectedLineIdx].size--;
 }
 
+function changeColor(color) {
+    gMeme.lines[gMeme.selectedLineIdx].color = color;
+}
+
 // function changeAlign(dir) {
 //     gMeme.lines[gMeme.selectedLineIdx].align = dir;
 // }
