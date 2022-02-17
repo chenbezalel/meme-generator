@@ -13,12 +13,12 @@ function onInit() {
     // resizeCanvas();
 }
 
-function onChangeText(){
+function onChangeText() {
     setLineText();
     renderMeme();
 }
 
-function renderMeme(){
+function renderMeme() {
     drawImg();
 }
 
@@ -32,7 +32,7 @@ function drawImg() {
     }
 }
 
-function renderText(){
+function renderText() {
     var meme = getMeme();
     meme.lines.forEach((line, idx) => drawText(idx, line.txt, line.pos.x, line.pos.y))
 }
@@ -45,7 +45,7 @@ function renderText(){
 //     return gPos;
 // }
 
-function getLineSettings(idx){
+function getLineSettings(idx) {
     var meme = getMeme();
     var color = meme.lines[idx].color;
     var size = meme.lines[idx].size;
@@ -55,7 +55,7 @@ function getLineSettings(idx){
     var txt = meme.lines[idx].txt;
     // var pos = getLinePos();
 
-    return{
+    return {
         color,
         size,
         font,
@@ -73,27 +73,35 @@ function drawText(idx, txt, x, y) {
     gCtx.strokeText(txt.toUpperCase(), x, y);
 }
 
-function onIncrease(){
+function onIncrease() {
     increaseSize();
     renderMeme();
 }
 
-function onDecrease(){
+function onDecrease() {
     decreaseSize();
     renderMeme();
 }
 
-function onChangeColor(elColor){
+function onChangeColor(elColor) {
     changeColor(elColor.value);
     renderMeme();
 }
 
 
-function onAddLine(){
+function onAddLine() {
     var meme = getMeme();
     meme.selectedLineIdx++;
     document.querySelector('input[name="text-line"]').value = '';
     renderMeme();
+}
+
+function onSwitch() {
+    var meme = getMeme();
+    if (meme.selectedLineIdx === meme.lines.length - 1) meme.selectedLineIdx = 0;
+    else meme.selectedLineIdx += 1;
+    var currMeme = meme.lines[meme.selectedLineIdx];
+    document.querySelector('input[name="text-line"]').value = currMeme.txt;
 }
 
 
