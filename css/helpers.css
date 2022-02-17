@@ -20,6 +20,10 @@
     flex-direction: column;
 }
 
+.flex.wrap{
+    flex-wrap: wrap;
+}
+
 /* list */
 
 .clean-list {

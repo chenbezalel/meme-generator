@@ -73,6 +73,10 @@ canvas, .control-box {
     padding: 20px;
 }
 
+.line-design-btns>* {
+    margin: 5px 20px;
+}
+
 .btn {
     margin-inline: 10px;
     border: none;

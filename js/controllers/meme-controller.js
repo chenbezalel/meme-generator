@@ -47,12 +47,12 @@ function renderText(){
 
 function getLineSettings(idx){
     var meme = getMeme();
-    var color = meme.lines[meme.selectedLineIdx].color;
-    var size = meme.lines[meme.selectedLineIdx].size;
-    var font = meme.lines[meme.selectedLineIdx].font;
-    var align = meme.lines[meme.selectedLineIdx].align;
-    var stroke = meme.lines[meme.selectedLineIdx].stroke;
-    var txt = meme.lines[meme.selectedLineIdx].txt;
+    var color = meme.lines[idx].color;
+    var size = meme.lines[idx].size;
+    var font = meme.lines[idx].font;
+    var align = meme.lines[idx].align;
+    var stroke = meme.lines[idx].stroke;
+    var txt = meme.lines[idx].txt;
     // var pos = getLinePos();
 
     return{
@@ -92,7 +92,7 @@ function onAddLine(){
     var meme = getMeme();
     meme.selectedLineIdx++;
     document.querySelector('input[name="text-line"]').value = '';
-    gCtx.save();
+    renderMeme();
 }
 
 
