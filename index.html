@@ -43,15 +43,15 @@
                 <input type="text" class="text-line" name="text-line" placeholder="Your text" onchange="renderMeme()">
                 <section class="line-control-btns">
                     <button class="btn switch-lines"><img src="icons/switch.png" alt=""></button>
-                    <button class="btn add-line"><img src="icons/add.png" alt=""></button>
+                    <button class="btn add-line" onclick="onAddLine()"><img src="icons/add.png" alt=""></button>
                     <button class="btn remove-line"><img src="icons/trash.png" alt=""></button>
                 </section>
                 <section class="line-design-btns">
                     <button class="btn Increase-line" onclick="onIncrease()"><img src="icons/increase.png" alt=""></button>
                     <button class="btn decrease-line" onclick="onDecrease()"><img src="icons/decrease.png" alt=""></button>
-                    <button class="btn align-left"><img src="icons/align-to-left.png" alt=""></button>
-                    <button class="btn align-center"><img src="icons/center-text-alignment.png" alt=""></button>
-                    <button class="btn align-center"><img src="icons/align-to-right.png" alt=""></button>
+                    <button class="btn align-left" onclick="onChangeAlign('left')"><img src="icons/align-to-left.png" alt=""></button>
+                    <button class="btn align-center" onclick="onChangeAlign('center')"><img src="icons/center-text-alignment.png" alt=""></button>
+                    <button class="btn align-right" onclick="onChangeAlign('right')"><img src="icons/align-to-right.png" alt=""></button>
                 </section>
             </div>
         </div>

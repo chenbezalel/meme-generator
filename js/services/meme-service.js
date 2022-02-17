@@ -1,13 +1,8 @@
 "use stricrt"
 
-// testing
 var gKeywordSearchCountMap = {};
 var gImgs;
 var gMeme;
-
-// function createMeme(){
-//     gMeme = 
-// }
 
 gMeme = {
     selectedImgId: null,
@@ -20,7 +15,17 @@ gMeme = {
             align: 'left',
             color: 'white',
             stroke: 'black',
-            font: 'impact'
+            font: 'impact',
+            pos: {x: 100, y:70}
+        },
+        {
+            txt: '',
+            size: 45,
+            align: 'left',
+            color: 'white',
+            stroke: 'black',
+            font: 'impact',
+            pos: {x: 100, y:400}
         }
     ]
 }
@@ -44,12 +49,12 @@ function getImages() {
     return gImgs;
 }
 
-function getImgSelectedUrl(){
+function getImgSelectedUrl() {
     var selectedImg = gImgs.find(img => img.id === gMeme.selectedImgId);
     return selectedImg.url;
 }
 
-function setLineText(){
+function setLineText() {
     var elTextLine = document.querySelector('input[name="text-line"]');
     var textLine = elTextLine.value;
     var meme = getMeme();
@@ -66,15 +71,19 @@ function _createImg(url, keyWords) {
     return img;
 }
 
-function setImg(imgId){
+function setImg(imgId) {
     gMeme.selectedImgId = imgId;
 }
 
-function increaseSize(){
+function increaseSize() {
     gMeme.lines[gMeme.selectedLineIdx].size++;
 }
 
-function decreaseSize(){
+function decreaseSize() {
     gMeme.lines[gMeme.selectedLineIdx].size--;
 }
+
+// function changeAlign(dir) {
+//     gMeme.lines[gMeme.selectedLineIdx].align = dir;
+// }
 
