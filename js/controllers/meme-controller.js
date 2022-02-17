@@ -127,6 +127,7 @@ function onDelete() {
     var meme = getMeme();
     meme.lines.splice(meme.selectedLineIdx, 1);
     document.querySelector('input[name="text-line"]').value = '';
+    getLinesPos();
     renderMeme();
 }
 
