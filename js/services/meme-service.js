@@ -1,5 +1,6 @@
 "use stricrt"
 
+// testing
 var gKeywordSearchCountMap = {};
 var gImgs;
 var gMeme;
