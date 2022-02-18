@@ -51,10 +51,10 @@ body {
     visibility: hidden;
 }
 
-.canvas-container {
+/* .canvas-container {
     width: 500px;
     height: 500px;
-  }
+  } */
 
 canvas, .control-box {
     margin-top: 10px;
@@ -63,11 +63,11 @@ canvas, .control-box {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-.control-box {
+/* .control-box {
     width: 500px;
     height: 500px;
     padding: 25px 40px;
-}
+} */
 
 .control-box .text-line {
     width: 100%;

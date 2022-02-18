@@ -8,7 +8,7 @@
         font-size: 1.2rem;
     }
 
-    .logo img{
+    .logo img {
         height: 40px;
         width: 160px;
     }
@@ -44,7 +44,7 @@
 
     /* Editor */
 
-    .editor{
+    .editor {
         flex-direction: column;
         align-items: center;
     }
@@ -54,7 +54,7 @@
         height: 300px;
     }
 
-    .canvas{
+    .canvas {
         margin-top: 0px;
     }
 
@@ -77,12 +77,12 @@
         padding-top: 10px;
     }
 
-    .line-design-btns{
+    .line-design-btns {
         width: 100%;
         padding: 5px;
     }
 
-    .btn, .color-input{
+    .btn, .color-input {
         width: 50px;
         height: 47px;
     }
@@ -90,10 +90,10 @@
     .search-container {
         width: 100%;
     }
-    
+
     /* Gallery */
 
-    .gallery{
+    .gallery {
         padding: 15px;
         margin-inline: 10px;
     }
@@ -116,15 +116,105 @@
 }
 
 
+/* Small */
+@media (min-width:740px) {
+    .main-layout {
+        max-width: 730px;
+        margin: auto;
+    }
+
+    .main-nav {
+        padding-inline: 30px;
+    }
+
+    .btn-menu, .btn-close-menu {
+        display: none;
+    }
+
+    /* Editor */
+
+    .canvas-container {
+        display: flex;
+        align-self: center;
+        width: 370px;
+        height: 370px;
+    }
+
+    .control-box {
+        width: 350px;
+        height: 400px;
+        padding: 20px 20px;
+    }
+
+    .control-box .text-line{
+        height: 40px;
+    }
+
+    .line-design-btns {
+        width: 100%;
+        margin-right: 0;
+        height: 150px;
+        border-radius: 15px;
+        background-color: rgb(228, 171, 171);
+        padding: 10px;
+    }
+
+}
+
+
+
+/* Medium */
+
+@media (min-width:920px) {
+    .main-layout {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .main-nav {
+        padding-inline: 30px;
+    }
+
+
+    /* Editor */
+
+    .canvas-container {
+        width: 420px;
+        height: 420px;
+    }
+
+    .control-box {
+        width: 420px;
+        height: 420px;
+        padding: 25px 40px;
+    }
+
+    .line-design-btns {
+        width: 100%;
+        height: 150px;
+        border-radius: 15px;
+        background-color: rgb(228, 171, 171);
+        padding: 10px;
+    }
+
+}
+
+
 /* Desktop */
 
-/* @media (min-width: 1260px){
-    .main-layout{
+@media (min-width: 1260px) {
+    .main-layout {
         max-width: 1200px;
     }
 
-    .editor-layout{
-        max-width: 1100px;
+    .canvas-container {
+        width: 500px;
+        height: 500px;
     }
 
-} */
+    .control-box {
+        width: 500px;
+        height: 500px;
+        padding: 25px 40px;
+    }
+}
