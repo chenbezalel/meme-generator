@@ -24,8 +24,13 @@
         top: 0;
         min-width: 200px;
         height: 100vh;
-        transform: translate(110%, 75px);
+        transform: translate(100%, 75px);
         transition: transform .6s, box-shadow .6s;
+    }
+
+    body.menu-open .main-nav ul {
+        transform: translate(0, 75px);
+        box-shadow: -10px 0px 13px rgb(0 0 0 / 16%);
     }
 
     .nav-content li {
@@ -37,7 +42,7 @@
         border-bottom: .5px solid rgb(85, 84, 84, 0.9);
     }
 
-    /* editor */
+    /* Editor */
 
     .editor{
         flex-direction: column;
@@ -85,6 +90,8 @@
     .search-container {
         width: 100%;
     }
+    
+    /* Gallery */
 
     .gallery{
         padding: 15px;
