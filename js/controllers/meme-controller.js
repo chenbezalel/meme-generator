@@ -21,6 +21,10 @@ function addListenes() {
     elTextLine.addEventListener('keyup', onChangeText);
 }
 
+function onSearch(){
+    renderGallery();
+}
+
 function onChangeText() {
     setLineText();
     renderMeme();
@@ -50,7 +54,6 @@ function getLineSettings(idx) {
     var color = meme.lines[idx].color;
     var size = meme.lines[idx].size;
     var font = meme.lines[idx].font;
-    var align = meme.lines[idx].align;
     var stroke = meme.lines[idx].stroke;
     var txt = meme.lines[idx].txt;
     // var pos = getLinePos();
@@ -59,9 +62,8 @@ function getLineSettings(idx) {
         color,
         size,
         font,
-        align,
-        txt,
-        stroke
+        stroke,
+        txt
         // pos
     }
 }
@@ -69,6 +71,7 @@ function getLineSettings(idx) {
 function drawText(idx, txt, x, y) {
     var meme = getLineSettings(idx);
     gCtx.fillStyle = meme.color;
+    gCtx.strokeStyle = meme.stroke;
     gCtx.font = `${meme.size}px ${meme.font}`;
     gCtx.fillText(txt.toUpperCase(), x, y);
     gCtx.strokeText(txt.toUpperCase(), x, y);
@@ -86,6 +89,12 @@ function onDecrease() {
 
 function onChangeColor(elColor) {
     changeColor(elColor.value);
+    renderMeme();
+}
+
+function onChangeStroke(elStroke) {
+    changeStroke(elStroke.value);
+    console.log(elStroke.value);
     renderMeme();
 }
 
@@ -124,10 +133,9 @@ function onSwitch() {
 }
 
 
-// not complite yet:
 function onDelete() {
     var meme = getMeme();
-    meme.lines.splice(meme.selectedLineIdx, 1);
+    meme.lines[meme.selectedLineIdx].txt = '';
     document.querySelector('input[name="text-line"]').value = '';
     renderMeme();
 }

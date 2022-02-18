@@ -59,52 +59,65 @@ function createImgs() {
     ]
 }
 
-
-function getMeme() {
-    return gMeme;
+function getImgsForDisplay() {
+    searchValue = document.querySelector('input[name="search"]').value;
+    if (searchValue === '') return gImgs;
+    else {
+        console.log(searchValue);
+        return gImgs.filter(img => img.keyWords.find(key => key === searchValue));
+    }
 }
 
-function getImages() {
-    return gImgs;
-}
 
-function getImgSelectedUrl() {
-    var selectedImg = gImgs.find(img => img.id === gMeme.selectedImgId);
-    return selectedImg.url;
-}
-
-function setLineText() {
-    var elTextLine = document.querySelector('input[name="text-line"]');
-    var textLine = elTextLine.value;
-    var meme = getMeme();
-    meme.lines[meme.selectedLineIdx].txt = textLine;
-}
-
-function _createImg(url, keyWords) {
-    var img = {
-        id: makeId(),
-        url,
-        keyWords
+    function getMeme() {
+        return gMeme;
     }
 
-    return img;
-}
+    function getImages() {
+        return gImgs;
+    }
 
-function setImg(imgId) {
-    gMeme.selectedImgId = imgId;
-}
+    function getImgSelectedUrl() {
+        var selectedImg = gImgs.find(img => img.id === gMeme.selectedImgId);
+        return selectedImg.url;
+    }
 
-function increaseSize() {
-    gMeme.lines[gMeme.selectedLineIdx].size++;
-}
+    function setLineText() {
+        var elTextLine = document.querySelector('input[name="text-line"]');
+        var textLine = elTextLine.value;
+        var meme = getMeme();
+        meme.lines[meme.selectedLineIdx].txt = textLine;
+    }
 
-function decreaseSize() {
-    gMeme.lines[gMeme.selectedLineIdx].size--;
-}
+    function _createImg(url, keyWords) {
+        var img = {
+            id: makeId(),
+            url,
+            keyWords
+        }
 
-function changeColor(color) {
-    gMeme.lines[gMeme.selectedLineIdx].color = color;
-}
+        return img;
+    }
+
+    function setImg(imgId) {
+        gMeme.selectedImgId = imgId;
+    }
+
+    function increaseSize() {
+        gMeme.lines[gMeme.selectedLineIdx].size++;
+    }
+
+    function decreaseSize() {
+        gMeme.lines[gMeme.selectedLineIdx].size--;
+    }
+
+    function changeColor(color) {
+        gMeme.lines[gMeme.selectedLineIdx].color = color;
+    }
+
+    function changeStroke(color) {
+        gMeme.lines[gMeme.selectedLineIdx].stroke = color;
+    }
 
 // function changeAlign(dir) {
 //     gMeme.lines[gMeme.selectedLineIdx].align = dir;

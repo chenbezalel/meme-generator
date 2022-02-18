@@ -1,7 +1,7 @@
 "use strict"
 
 function renderGallery() {
-    var imgs = getImages();
+    var imgs = getImgsForDisplay();
 
     var strHtml = imgs.map(img =>
         `<img src="${img.url}" onclick="onImegeSelect('${img.id}')" alt="">`

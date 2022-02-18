@@ -72,7 +72,7 @@
     }
 
     .line-control-btns {
-        width: 300px;
+        width: 280px;
         margin: auto;
         padding-top: 10px;
     }
@@ -154,8 +154,6 @@
         width: 100%;
         margin-right: 0;
         height: 150px;
-        border-radius: 15px;
-        background-color: rgb(228, 171, 171);
         padding: 10px;
     }
 
@@ -187,6 +185,10 @@
         width: 420px;
         height: 420px;
         padding: 25px 40px;
+    }
+
+    .control-box .text-line{
+        height: 60px;
     }
 
     .line-design-btns {

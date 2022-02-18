@@ -29,8 +29,8 @@
             <div class="gallery-content gallery-layout">
                 <div class="search-container">
                     <form class="search-form flex">
-                        <input type="search" placeholder="Search" class="search-field" />
-                        <button type="submit" class="search-button">
+                        <input type="search" placeholder="Search" name="search" class="search-field" />
+                        <button type="button" class="search-button" onclick="onSearch()">
                             <img src="icons/search-icon.png">
                         </button>
                     </form>
@@ -57,6 +57,10 @@
                     <div class="color">
                         <button class="btn color-btn"><img src="icons/paint-board-and-brush.png" alt=""></button>
                         <input type="color" class="color-input" onchange="onChangeColor(this)">
+                    </div>
+                    <div class="color">
+                        <button class="btn color-btn"><img src="icons/text-stroke.png" alt=""></button>
+                        <input type="color" class="color-input" onchange="onChangeStroke(this)">
                     </div>
                     <!-- <button class="btn align-left" onclick="onChangeAlign('left')"><img src="icons/align-to-left.png" alt=""></button>
                     <button class="btn align-center" onclick="onChangeAlign('center')"><img src="icons/center-text-alignment.png" alt=""></button>
