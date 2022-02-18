@@ -3,6 +3,11 @@
     margin: auto;
 }
 
+.gallery-layout{
+    max-width: 1000px;
+    margin: auto;
+}
+
 .editor-layout{
     max-width: 1100px;
     margin: auto;

@@ -32,16 +32,16 @@ body {
 }
 
 .nav-content ul>*:hover{
-    color: rgb(218, 13, 218);
+    color: rgb(0, 0, 0);
 }
 
 .btn-menu, .btn-close-menu{
     background-color: inherit;
     color: white;
     border: none;
-    font-size: 2em;
+    font-size: 1.7em;
     cursor: pointer;
-    display: none;
+    /* display: none; */
 }
 
 
@@ -117,18 +117,19 @@ canvas, .control-box {
     background-image: linear-gradient(-38deg, #42eb5c 0%, #37b34a 100%);
 }
 
+
+.remove-line {
+    box-shadow: 1px 5px 0 #8c0606, inset 0 5px 0 rgba(255, 255, 255, 0.58);
+    background-color: #ebeef3;
+    background-image: linear-gradient(-38deg, #cf1d37 0%, #cf1d37 1%, #f05036 100%);
+}
+
 .line-design-btns{
     width: 90%;
     height: 150px;
     border-radius: 15px;
     background-color: rgb(228, 171, 171);
     padding: 20px;
-}
-
-.remove-line {
-    box-shadow: 1px 5px 0 #8c0606, inset 0 5px 0 rgba(255, 255, 255, 0.58);
-    background-color: #ebeef3;
-    background-image: linear-gradient(-38deg, #cf1d37 0%, #cf1d37 1%, #f05036 100%);
 }
 
 .color{
@@ -154,8 +155,14 @@ canvas, .control-box {
 
 /* gallery */
 
+.gallery{
+    border-radius: 30px;
+    padding: 30px;
+    background-color: rgb(228, 171, 171);
+}
+
 .search-container {
-    width: 500px;
+    width: 50%;
     height: 70px
 }
 
