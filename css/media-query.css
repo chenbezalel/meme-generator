@@ -61,7 +61,7 @@
     .control-box {
         margin-top: 25px;
         width: 350px;
-        height: 420px;
+        height: 450px;
         padding: 10px 10px;
     }
 
@@ -96,9 +96,13 @@
         width: 100%;
     }
 
-    .download{
+    .download, .share{
         width: 120px;
         height: 45px;
+    }
+
+    .actions{
+        flex-wrap: wrap;
     }
 
     /* Gallery */

@@ -20,7 +20,7 @@ body {
     font-size: 1.3rem;
 }
 
-.logo img{
+.logo img {
     height: 50px;
     width: 200px;
 }
@@ -31,11 +31,11 @@ body {
     cursor: pointer;
 }
 
-.nav-content ul>*:hover{
+.nav-content ul>*:hover {
     color: rgb(0, 0, 0);
 }
 
-.btn-menu, .btn-close-menu{
+.btn-menu, .btn-close-menu {
     background-color: inherit;
     color: white;
     border: none;
@@ -94,7 +94,7 @@ canvas, .control-box {
     margin: 5px 20px;
 }
 
-.btn, .color-input{
+.btn, .color-input {
     margin-inline: 10px;
     border: none;
     width: 56px;
@@ -126,7 +126,7 @@ canvas, .control-box {
     background-image: linear-gradient(-38deg, #cf1d37 0%, #cf1d37 1%, #f05036 100%);
 }
 
-.line-design-btns{
+.line-design-btns {
     width: 80%;
     height: 150px;
     border-radius: 15px;
@@ -134,14 +134,14 @@ canvas, .control-box {
     padding: 20px;
 }
 
-.color{
+.color {
     display: inline-block;
     position: relative;
     height: 51px;
     margin-inline: 0;
 }
 
-.color-input{
+.color-input {
     position: absolute;
     top: 0;
     right: 0;
@@ -155,13 +155,18 @@ canvas, .control-box {
     height: 30px;
 }
 
-.font-input{
+.font-input {
     width: 100px;
     font-size: 1.1em;
 }
 
-.download {
+.actions {
+    width: 100%;
+}
+
+.download, .share {
     margin-top: 10px;
+    margin-bottom: 15px;
     width: 120px;
     height: 40px;
     color: white;
@@ -171,7 +176,28 @@ canvas, .control-box {
     background-image: linear-gradient(-38deg, #1d20cf 0%, #1d20cf 1%, #1d20cf 100%);
 }
 
-.emojis{
+.share-container {
+    margin: auto;
+    width: 150px;
+}
+
+.share {
+    /* display: inline-block; */
+    text-decoration: none;
+    box-shadow: 1px 5px 0 #32035d, inset 0 5px 0 rgba(255, 255, 255, 0.58);
+    background-color: #ebeef3;
+    background-image: linear-gradient(-38deg, #8e1dcf 0%, #8e1dcf 1%, #8e1dcf 100%);
+    /* user-select: none; */
+}
+
+.share-container a {
+    margin-top: 25px;
+    color: black;
+    text-align: center;
+}
+
+
+.emojis {
     margin: auto;
     width: 80%;
     height: 50px;
@@ -181,18 +207,18 @@ canvas, .control-box {
     padding: 20px;
 }
 
-.emojis ul>*{
+.emojis ul>* {
     font-size: 2.5em;
     padding: 10px;
 }
 
-.emojis ul>*:hover{
+.emojis ul>*:hover {
     cursor: pointer;
 }
 
 /* gallery */
 
-.gallery{
+.gallery {
     border-radius: 30px;
     padding: 30px;
     background-color: rgb(228, 171, 171);
@@ -203,7 +229,7 @@ canvas, .control-box {
     height: 70px
 }
 
-.search-field{
+.search-field {
     width: 100%;
     height: 50px;
     padding: 10px 35px 10px 15px;

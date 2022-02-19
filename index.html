@@ -92,7 +92,13 @@
                     <li onclick="onAddEmoji('❤️')">❤️</li>
                 </ul>
             </section>
-            <button type="button" class="btn download" onclick="download(this)">Download ⭳</button>
+            <div class="actions flex">
+                <button type="button" class="btn download" onclick="download(this)">Download</button>
+                <button type="button" class="btn share" onclick="uploadImg()">Share</button>
+                <section class="share-container">
+                    <!-- <a href="">share to facebook</a> -->
+                </section>
+            </div>
         </div>
     </div>
 
