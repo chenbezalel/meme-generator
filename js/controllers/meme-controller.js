@@ -4,6 +4,7 @@ var gElCanvas;
 var gCtx;
 var gGrabbedTextIdx;
 var gStartPos;
+var gMarkedLineIdx;
 const gTouchEvs = ['touchstart', 'touchmove', 'touchend'];
 
 function onInit() {
@@ -57,7 +58,9 @@ function onDown(ev) {
     gGrabbedTextIdx = isClicked[0].idx;
     meme.selectedLineIdx = gGrabbedTextIdx;
     document.querySelector('input[name="text-line"]').value = meme.lines[gGrabbedTextIdx].txt;
+    gMarkedLineIdx = gGrabbedTextIdx;
     document.body.style.cursor = 'grabbing';
+    renderMeme();
 }
 
 function onMove(ev) {
@@ -80,7 +83,7 @@ function moveText(dx, dy, gGrabbedTextIdx) {
 
 function onUp() {
     // console.log('onUp()');
-    gGrabbedTextIdx = null;
+    gGrabbedTextIdx = -1;
     document.body.style.cursor = 'auto';
 }
 
@@ -98,11 +101,12 @@ function drawImg() {
     }
 }
 
-function renderText() {
+function renderText() {   
     var meme = getMeme();
     meme.lines.forEach((line, idx) => drawText(idx, line.txt, line.pos.x, line.pos.y));
     meme.lines.filter((line) => line.txt === '').forEach(drawRect);
-
+    if (gMarkedLineIdx >= 0) meme.lines.filter((line ,idx) => idx === meme.selectedLineIdx).forEach(drawRect);
+    gMarkedLineIdx = -1;
     // drawRect();
 }
 
@@ -213,6 +217,8 @@ function onSwitch() {
     else meme.selectedLineIdx += 1;
     var currMeme = meme.lines[meme.selectedLineIdx];
     document.querySelector('input[name="text-line"]').value = currMeme.txt;
+    console.log(meme.selectedLineIdx);
+    gMarkedLineIdx = meme.selectedLineIdx;
     renderMeme();
     // meme.lines.filter((line => line === currMeme)).forEach(drawRect);
 }
