@@ -4,7 +4,7 @@ var gElCanvas;
 var gCtx;
 var gGrabbedTextIdx;
 var gStartPos;
-var gMarkedLineIdx;
+var gMarkedLineIdx = 0;
 const gTouchEvs = ['touchstart', 'touchmove', 'touchend'];
 
 function onInit() {
@@ -114,9 +114,9 @@ function drawImg() {
 function renderContent() {
     var meme = getMeme();
     meme.lines.forEach((line, idx) => drawText(idx, line.txt, line.pos.x, line.pos.y));
-    meme.lines.filter((line) => line.txt === '').forEach(drawRect);
+    // meme.lines.filter((line) => line.txt === '').forEach(drawRect);
     if (gMarkedLineIdx >= 0) meme.lines.filter((line, idx) => idx === meme.selectedLineIdx).forEach(drawRect);
-    gMarkedLineIdx = -1;
+    // gMarkedLineIdx = -1;
 }
 
 function getRectSettings() {
@@ -211,6 +211,7 @@ function onChanfeFont(elFont) {
 function onAddLine() {
     var meme = getMeme();
     meme.selectedLineIdx++;
+    gMarkedLineIdx = meme.selectedLineIdx;
     meme.lines.push(setDefultSettings());
     getLinesPos();
     document.querySelector('input[name="text-line"]').value = '';
@@ -220,6 +221,7 @@ function onAddLine() {
 function onAddEmoji(emoji){
     var meme = getMeme();
     meme.selectedLineIdx++;
+    gMarkedLineIdx = meme.selectedLineIdx;
     meme.lines.push(setDefultSettings());
     meme.lines[meme.selectedLineIdx].txt = emoji;
     getLinesPos();
