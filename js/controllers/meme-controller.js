@@ -52,7 +52,11 @@ function onDown(ev) {
     var meme = getMeme();
     var clicked = meme.lines.map((line, idx) => isTextClicked(pos, line.pos.x, line.pos.y, gCtx.measureText(line.txt).width, line.size, idx));
     var isClicked = clicked.filter(clicked => clicked.isDrug);
-    if (isClicked.length === 0) return;
+    if (isClicked.length === 0) {
+        if (gMarkedLineIdx >= 0) gMarkedLineIdx = -1;
+        renderMeme();
+        return;
+    }
 
     gStartPos = pos;
     gGrabbedTextIdx = isClicked[0].idx;
@@ -101,11 +105,11 @@ function drawImg() {
     }
 }
 
-function renderText() {   
+function renderText() {
     var meme = getMeme();
     meme.lines.forEach((line, idx) => drawText(idx, line.txt, line.pos.x, line.pos.y));
     meme.lines.filter((line) => line.txt === '').forEach(drawRect);
-    if (gMarkedLineIdx >= 0) meme.lines.filter((line ,idx) => idx === meme.selectedLineIdx).forEach(drawRect);
+    if (gMarkedLineIdx >= 0) meme.lines.filter((line, idx) => idx === meme.selectedLineIdx).forEach(drawRect);
     gMarkedLineIdx = -1;
     // drawRect();
 }
@@ -173,7 +177,7 @@ function onChangeStroke(elStroke) {
     renderMeme();
 }
 
-function onChanfeFont(elFont){
+function onChanfeFont(elFont) {
     changeFont(elFont.value);
     renderMeme();
 }
@@ -198,15 +202,15 @@ function getLinesPos() {
         lines[currIdx].pos.y += gElCanvas.height * 0.1;
     } else if (currIdx === 1) {
         lines[currIdx].pos.y = gElCanvas.height * 0.9;
-    } else if (currIdx === 2){
+    } else if (currIdx === 2) {
         lines[currIdx].pos.y = gElCanvas.height * 0.5;
-    } else if (currIdx === 3){
+    } else if (currIdx === 3) {
         lines[currIdx].pos.y = gElCanvas.height * 0.3;
-    } else if (currIdx === 4){
+    } else if (currIdx === 4) {
         lines[currIdx].pos.y = gElCanvas.height * 0.7;
     } else {
         lines[currIdx].pos.y = (gElCanvas.height * getRandomInt(3, 7)) / 10;
-        console.log(lines[currIdx].pos.y);
+        // console.log(lines[currIdx].pos.y);
     }
 }
 
@@ -217,7 +221,7 @@ function onSwitch() {
     else meme.selectedLineIdx += 1;
     var currMeme = meme.lines[meme.selectedLineIdx];
     document.querySelector('input[name="text-line"]').value = currMeme.txt;
-    console.log(meme.selectedLineIdx);
+    // console.log(meme.selectedLineIdx);
     gMarkedLineIdx = meme.selectedLineIdx;
     renderMeme();
     // meme.lines.filter((line => line === currMeme)).forEach(drawRect);
@@ -265,5 +269,12 @@ function toggleMenu(elBtn) {
     if (elBtn.innerText === '☰') elBtn.innerText = 'X';
     else if (elBtn.innerText === 'X') elBtn.innerText = '☰';
     // elBtn.innerText = '☰'? 'X': '☰';
+}
 
+function download() {
+    const data = gElCanvas.toDataURL("data/png");
+    var link = document.createElement('a');
+    link.download = "my-meme.png";
+    link.href = data;
+    link.click();
 }
