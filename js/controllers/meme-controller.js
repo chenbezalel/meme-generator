@@ -20,7 +20,7 @@ function onInit() {
 function addListeners() {
     addKeyUpListener();
     addMouseListeners();
-    // addTouchListeners();
+    addTouchListeners();
 }
 
 function addKeyUpListener() {
@@ -40,40 +40,48 @@ function addTouchListeners() {
     gElCanvas.addEventListener('touchend', onUp);
 }
 
+function onChangeText() {
+    setLineText();
+    renderMeme();
+}
+
 function onDown(ev) {
     const pos = getEvPos(ev)
 
     var meme = getMeme();
-    var clicked = meme.lines.map((line, idx) => isTextClicked(pos, line.pos.x, line.pos.y, gCtx.measureText(line.txt).width ,line.size, idx));
+    var clicked = meme.lines.map((line, idx) => isTextClicked(pos, line.pos.x, line.pos.y, gCtx.measureText(line.txt).width, line.size, idx));
     var isClicked = clicked.filter(clicked => clicked.isDrug);
     if (isClicked.length === 0) return;
-    
 
-    // if (!isCircleClicked(pos)) return;
-    // setCircleDrag(true);
     gStartPos = pos;
     gGrabbedTextIdx = isClicked[0].idx;
-    console.log(gGrabbedTextIdx);
+    meme.selectedLineIdx = gGrabbedTextIdx;
+    document.querySelector('input[name="text-line"]').value = meme.lines[gGrabbedTextIdx].txt;
     document.body.style.cursor = 'grabbing';
 }
 
 function onMove(ev) {
-    // console.log('onMove()');
     const meme = getMeme();
     if (gGrabbedTextIdx >= 0) {
         const pos = getEvPos(ev);
         const dx = pos.x - gStartPos.x;
         const dy = pos.y - gStartPos.y;
         moveText(dx, dy, gGrabbedTextIdx)
-        gStartPos = pos
+        gStartPos = pos;
         renderMeme()
     }
 }
 
 function moveText(dx, dy, gGrabbedTextIdx) {
     var meme = getMeme();
-    meme.lines[gGrabbedTextIdx].pos.x += dx
-    meme.lines[gGrabbedTextIdx].pos.y += dy
+    meme.lines[gGrabbedTextIdx].pos.x += dx;
+    meme.lines[gGrabbedTextIdx].pos.y += dy;
+}
+
+function onUp() {
+    // console.log('onUp()');
+    gGrabbedTextIdx = null;
+    document.body.style.cursor = 'auto';
 }
 
 
@@ -105,7 +113,7 @@ function getRectSettings() {
     var y = selectedLine.pos.y - selectedLine.size;;
     var width = gElCanvas.width * 0.8;
     var height = selectedLine.size + 10;
-    
+
     return {
         x,
         y,
@@ -135,20 +143,11 @@ function drawRect() {
     gCtx.stroke();
 }
 
-function onUp() {
-    // console.log('onUp()');
-    gGrabbedTextIdx = null;
-    document.body.style.cursor = 'auto';
-}
 
 function onSearch() {
     renderGallery();
 }
 
-function onChangeText() {
-    setLineText();
-    renderMeme();
-}
 
 function onIncrease() {
     increaseSize();
@@ -197,6 +196,7 @@ function getLinesPos() {
     }
 }
 
+
 function onSwitch() {
     var meme = getMeme();
     if (meme.selectedLineIdx === meme.lines.length - 1) meme.selectedLineIdx = 0;
@@ -204,6 +204,7 @@ function onSwitch() {
     var currMeme = meme.lines[meme.selectedLineIdx];
     document.querySelector('input[name="text-line"]').value = currMeme.txt;
     renderMeme();
+    // meme.lines.filter((line => line === currMeme)).forEach(drawRect);
 }
 
 
