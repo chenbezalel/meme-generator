@@ -85,10 +85,16 @@
                     <button class="btn align-center" onclick="onChangeAlign('center')"><img src="icons/center-text-alignment.png" alt=""></button>
                     <button class="btn align-right" onclick="onChangeAlign('right')"><img src="icons/align-to-right.png" alt=""></button> -->
             </section>
+            <section class="emojis flex space-between align-center">
+                <ul class="flex clean-list">
+                    <li onclick="onAddEmoji('👓')">👓</li>
+                    <li onclick="onAddEmoji('🎩')">🎩</li>
+                    <li onclick="onAddEmoji('❤️')">❤️</li>
+                </ul>
+            </section>
             <button type="button" class="btn download" onclick="download(this)">Download ⭳</button>
         </div>
     </div>
-
 
     <script src="js/services/util-service.js"></script>
     <script src="js/services/storage-service.js"></script>

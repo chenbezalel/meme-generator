@@ -18,9 +18,10 @@ function createMeme() {
                 stroke: 'black',
                 font: 'impact',
                 pos: { x: 0, y: 0 },
-                isDrag: false
             }
-        ]
+        ],
+
+        emojis: []
     }
 }
 
@@ -79,12 +80,12 @@ function getImgsForDisplay() {
     }
 }
 
-function isTextClicked(pos, x, y, width, height, idx) {
+function isTextClicked(pos, x, y, width, height, idx, isEmoji) {
     return {
         isDrug: (pos.x >= x && pos.x <= x + width && pos.y >= y - height && pos.y <= y),
-        idx
+        idx,
+        isEmoji: isEmoji
     };
-
     // return (gMeme.selectedLineIdx === 0);
 }
 

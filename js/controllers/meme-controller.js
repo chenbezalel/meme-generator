@@ -50,13 +50,19 @@ function onDown(ev) {
     const pos = getEvPos(ev)
 
     var meme = getMeme();
+
     var clicked = meme.lines.map((line, idx) => isTextClicked(pos, line.pos.x, line.pos.y, gCtx.measureText(line.txt).width, line.size, idx));
+
     var isClicked = clicked.filter(clicked => clicked.isDrug);
+
+    console.log(isClicked.length);
+
     if (isClicked.length === 0) {
-        if (gMarkedLineIdx >= 0) gMarkedLineIdx = -1;
+        if (gMarkedLineIdx >= 0 ) gMarkedLineIdx = -1;
         renderMeme();
         return;
     }
+
 
     gStartPos = pos;
     gGrabbedTextIdx = isClicked[0].idx;
@@ -101,17 +107,16 @@ function drawImg() {
     img.src = getImgSelectedUrl();
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
-        renderText();
+        renderContent();
     }
 }
 
-function renderText() {
+function renderContent() {
     var meme = getMeme();
     meme.lines.forEach((line, idx) => drawText(idx, line.txt, line.pos.x, line.pos.y));
     meme.lines.filter((line) => line.txt === '').forEach(drawRect);
     if (gMarkedLineIdx >= 0) meme.lines.filter((line, idx) => idx === meme.selectedLineIdx).forEach(drawRect);
     gMarkedLineIdx = -1;
-    // drawRect();
 }
 
 function getRectSettings() {
@@ -119,8 +124,12 @@ function getRectSettings() {
     var selectedLine = meme.lines[meme.selectedLineIdx];
     var x = selectedLine.pos.x;
     var y = selectedLine.pos.y - selectedLine.size;;
-    var width = gElCanvas.width * 0.8;
     var height = selectedLine.size + 10;
+    if (document.querySelector('input[name="text-line"]').value === ''){
+        var width = gElCanvas.width * 0.8;
+    } else{
+        var width = gCtx.measureText(selectedLine.txt).width + 35;
+    }
 
     return {
         x,
@@ -140,6 +149,22 @@ function drawText(idx, txt, x, y) {
     gCtx.fillText(txt.toUpperCase(), x, y);
     gCtx.strokeText(txt.toUpperCase(), x, y);
     // gCtx.stroke()
+}
+
+function drawEmoji(txt, x, y, size) {
+    // var meme = getLineSettings(idx);
+    // gCtx.beginPath();
+    gCtx.lineWidth = 1;
+    // gCtx.fillStyle = meme.color;
+    // gCtx.strokeStyle = meme.stroke;
+    gCtx.font = `${size}px impact`;
+    gCtx.fillText(txt.toUpperCase(), x, y);
+    // gCtx.strokeText(txt.toUpperCase(), x, y);
+    // gCtx.stroke()
+}
+
+function drawMeme(){
+
 }
 
 function drawRect() {
@@ -187,6 +212,16 @@ function onAddLine() {
     var meme = getMeme();
     meme.selectedLineIdx++;
     meme.lines.push(setDefultSettings());
+    getLinesPos();
+    document.querySelector('input[name="text-line"]').value = '';
+    renderMeme();
+}
+
+function onAddEmoji(emoji){
+    var meme = getMeme();
+    meme.selectedLineIdx++;
+    meme.lines.push(setDefultSettings());
+    meme.lines[meme.selectedLineIdx].txt = emoji;
     getLinesPos();
     document.querySelector('input[name="text-line"]').value = '';
     renderMeme();

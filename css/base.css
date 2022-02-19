@@ -170,6 +170,25 @@ canvas, .control-box {
     background-image: linear-gradient(-38deg, #1d20cf 0%, #1d20cf 1%, #1d20cf 100%);
 }
 
+.emojis{
+    margin: auto;
+    width: 80%;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 15px;
+    background-color: rgb(224, 137, 137);
+    padding: 20px;
+}
+
+.emojis ul>*{
+    font-size: 2.5em;
+    padding: 10px;
+}
+
+.emojis ul>*:hover{
+    cursor: pointer;
+}
+
 /* gallery */
 
 .gallery{
