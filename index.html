@@ -11,63 +11,82 @@
 
 <body class="main-layout" onload="onInit()">
 
-        <header class="main-header">
-            <nav class="main-nav flex space-between">
-                <div class="logo flex align-center"><img src="logo/LOGO.png" alt=""></div>
-                <div class="nav-content flex space-between align-center">
-                    <ul class="nav-content clean-list flex">
-                        <li onclick="onGalleryClicked()">Gallery</li>
-                        <li>Memes</li>
-                        <li>About</li>
-                    </ul>
-                    <button class="btn-menu" onclick="toggleMenu(this)">☰</button>
-                </div>
-            </nav>
-        </header>
-
-        <section class="gallery">
-            <div class="gallery-content gallery-layout">
-                <div class="search-container">
-                    <form class="search-form flex">
-                        <input type="search" placeholder="Search" name="search" class="search-field" />
-                        <button type="button" class="search-button" onclick="onSearch()">
-                            <img src="icons/search-icon.png">
-                        </button>
-                    </form>
-                </div>
-                <section class="gallery-container"></section>
+    <header class="main-header">
+        <nav class="main-nav flex space-between">
+            <div class="logo flex align-center"><img src="logo/LOGO.png" alt=""></div>
+            <div class="nav-content flex space-between align-center">
+                <ul class="nav-content clean-list flex">
+                    <li onclick="onGalleryClicked()">Gallery</li>
+                    <li>Memes</li>
+                    <li>About</li>
+                </ul>
+                <button class="btn-menu" onclick="toggleMenu(this)">☰</button>
             </div>
-        </section>
+        </nav>
+    </header>
 
-
-        <div class="editor editor-layout flex space-between">
-            <div class="canvas-container">
-                <canvas width="500px" height="500px" class="meme-canvas"></canvas>
+    <section class="gallery">
+        <div class="gallery-content gallery-layout">
+            <div class="search-container">
+                <form class="search-form flex">
+                    <input onchange="onSearch()" type="search" list="search" placeholder="Search" name="search"
+                        class="search-field" />
+                    <datalist id="search">
+                        <option value="funny">
+                        <option value="politics">
+                        <option value="cute">
+                        <option value="pets">
+                        <option value="dog">
+                        <option value="love">
+                        <option value="child">
+                        <option value="baby">
+                        <option value="sleep">
+                    </datalist>
+                    <button type="button" class="search-button" onclick="onSearch()">
+                        <img src="icons/search-icon.png">
+                    </button>
+                </form>
             </div>
-            <div class="control-box">
-                <input type="text" class="text-line" name="text-line" placeholder="Your text" onchange="renderMeme()">
-                <section class="line-control-btns">
-                    <button class="btn switch-lines" onclick="onSwitch()"><img src="icons/switch.png" alt=""></button>
-                    <button class="btn add-line" onclick="onAddLine()"><img src="icons/add.png" alt=""></button>
-                    <button class="btn remove-line" onclick="onDelete()"><img src="icons/trash.png" alt=""></button>
-                </section>
-                <section class="line-design-btns flex wrap">
-                    <button class="btn Increase-line" onclick="onIncrease()"><img src="icons/increase.png" alt=""></button>
-                    <button class="btn decrease-line" onclick="onDecrease()"><img src="icons/decrease.png" alt=""></button>
-                    <div class="color">
-                        <button class="btn color-btn"><img src="icons/paint-board-and-brush.png" alt=""></button>
-                        <input type="color" class="color-input" onchange="onChangeColor(this)">
-                    </div>
-                    <div class="color">
-                        <button class="btn color-btn"><img src="icons/text-stroke.png" alt=""></button>
-                        <input type="color" class="color-input" onchange="onChangeStroke(this)">
-                    </div>
-                    <!-- <button class="btn align-left" onclick="onChangeAlign('left')"><img src="icons/align-to-left.png" alt=""></button>
+            <section class="gallery-container"></section>
+        </div>
+    </section>
+
+
+    <div class="editor editor-layout flex space-between">
+        <div class="canvas-container">
+            <canvas width="500px" height="500px" class="meme-canvas"></canvas>
+        </div>
+        <div class="control-box">
+            <input type="text" class="text-line" name="text-line" placeholder="Your text" onchange="renderMeme()">
+            <section class="line-control-btns">
+                <button class="btn switch-lines" onclick="onSwitch()"><img src="icons/switch.png" alt=""></button>
+                <button class="btn add-line" onclick="onAddLine()"><img src="icons/add.png" alt=""></button>
+                <button class="btn remove-line" onclick="onDelete()"><img src="icons/trash.png" alt=""></button>
+            </section>
+            <section class="line-design-btns flex wrap">
+                <button class="btn Increase-line" onclick="onIncrease()"><img src="icons/increase.png" alt=""></button>
+                <button class="btn decrease-line" onclick="onDecrease()"><img src="icons/decrease.png" alt=""></button>
+                <div class="color">
+                    <button class="btn color-btn"><img src="icons/paint-board-and-brush.png" alt=""></button>
+                    <input type="color" class="color-input" onchange="onChangeColor(this)">
+                </div>
+                <div class="color">
+                    <button class="btn color-btn"><img src="icons/text-stroke.png" alt=""></button>
+                    <input type="color" class="color-input" onchange="onChangeStroke(this)">
+                </div>
+                <select onchange="onChanfeFont(this)" class="btn font-input" name="font">
+                    <option value="impact">IMPACT</option>
+                    <option value="Arial">ARIAL</option>
+                    <option value="Tahoma">TAHOMA</option>
+                    <option value="Verdana">VERDANA</option>
+                    <option value="Cambria">CAMBRIA</option>
+                </select>
+                <!-- <button class="btn align-left" onclick="onChangeAlign('left')"><img src="icons/align-to-left.png" alt=""></button>
                     <button class="btn align-center" onclick="onChangeAlign('center')"><img src="icons/center-text-alignment.png" alt=""></button>
                     <button class="btn align-right" onclick="onChangeAlign('right')"><img src="icons/align-to-right.png" alt=""></button> -->
-                </section>
-            </div>
+            </section>
         </div>
+    </div>
 
 
     <script src="js/services/util-service.js"></script>

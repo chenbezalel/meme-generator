@@ -48,7 +48,7 @@ function createImgs() {
         _createImg('images/1.jpg', ['funny', 'politics']),
         _createImg('images/2.jpg', ['cute', 'pets', 'dog', 'love']),
         _createImg('images/3.jpg', ['cute', 'pets', 'baby', 'sleep', 'child', 'dog']),
-        _createImg('images/4.jpg', ['cat', 'sleep', 'funny', 'keyboard']),
+        _createImg('images/4.jpg', ['cat', 'sleep', 'funny']),
         _createImg('images/5.jpg', ['funny', 'strong', 'child']),
         _createImg('images/6.jpg', ['funny', 'smart']),
         _createImg('images/7.jpg', ['funny', 'baby', 'child', 'surprise']),
@@ -137,6 +137,10 @@ function changeColor(color) {
 
 function changeStroke(color) {
     gMeme.lines[gMeme.selectedLineIdx].stroke = color;
+}
+
+function changeFont(font) {
+    gMeme.lines[gMeme.selectedLineIdx].font = font;
 }
 
 // function changeAlign(dir) {

@@ -166,7 +166,11 @@ function onChangeColor(elColor) {
 
 function onChangeStroke(elStroke) {
     changeStroke(elStroke.value);
-    console.log(elStroke.value);
+    renderMeme();
+}
+
+function onChanfeFont(elFont){
+    changeFont(elFont.value);
     renderMeme();
 }
 
@@ -184,14 +188,20 @@ function getLinesPos() {
     var meme = getMeme();
     var currIdx = meme.selectedLineIdx;
     var lines = meme.lines;
-    lines[currIdx].pos.x = gElCanvas.width / 9;
+    lines[currIdx].pos.x += 25;
 
     if (currIdx === 0) {
-        lines[currIdx].pos.y = gElCanvas.height * 0.1;
+        lines[currIdx].pos.y += gElCanvas.height * 0.1;
     } else if (currIdx === 1) {
         lines[currIdx].pos.y = gElCanvas.height * 0.9;
+    } else if (currIdx === 2){
+        lines[currIdx].pos.y = gElCanvas.height * 0.5;
+    } else if (currIdx === 3){
+        lines[currIdx].pos.y = gElCanvas.height * 0.3;
+    } else if (currIdx === 4){
+        lines[currIdx].pos.y = gElCanvas.height * 0.7;
     } else {
-        lines[currIdx].pos.y = gElCanvas.height / (getRandomInt(2, 7));
+        lines[currIdx].pos.y = (gElCanvas.height * getRandomInt(3, 7)) / 10;
         console.log(lines[currIdx].pos.y);
     }
 }

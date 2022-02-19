@@ -78,13 +78,18 @@
     }
 
     .line-design-btns {
-        width: 100%;
+        width: 80%;
+        margin: auto;
         padding: 5px;
     }
 
     .btn, .color-input {
         width: 50px;
         height: 47px;
+    }
+
+    .font-input{
+        width: 80px;
     }
 
     .search-container {
@@ -192,7 +197,8 @@
     }
 
     .line-design-btns {
-        width: 100%;
+        width: 80%;
+        margin: auto;
         height: 150px;
         border-radius: 15px;
         background-color: rgb(228, 171, 171);

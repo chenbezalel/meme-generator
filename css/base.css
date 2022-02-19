@@ -126,7 +126,7 @@ canvas, .control-box {
 }
 
 .line-design-btns{
-    width: 90%;
+    width: 80%;
     height: 150px;
     border-radius: 15px;
     background-color: rgb(228, 171, 171);
@@ -145,6 +145,11 @@ canvas, .control-box {
     top: 0;
     right: 0;
     opacity: 0;
+}
+
+.font-input{
+    width: 100px;
+    font-size: 1.1em;
 }
 
 .btn img {
