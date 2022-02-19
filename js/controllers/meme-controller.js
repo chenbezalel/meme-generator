@@ -4,14 +4,15 @@ var gElCanvas;
 var gCtx;
 var gGrabbedTextIdx;
 var gStartPos;
-var gMarkedLineIdx = 0;
+var gMarkedLineIdx;
 const gTouchEvs = ['touchstart', 'touchmove', 'touchend'];
 
 function onInit() {
     gElCanvas = document.querySelector('.meme-canvas');
     gCtx = gElCanvas.getContext('2d');
-    createImgs();
+    gMarkedLineIdx = 0;
     createMeme();
+    createImgs();
     renderGallery();
     addListeners();
     getLinesPos();
@@ -58,7 +59,7 @@ function onDown(ev) {
     console.log(isClicked.length);
 
     if (isClicked.length === 0) {
-        if (gMarkedLineIdx >= 0 ) gMarkedLineIdx = -1;
+        if (gMarkedLineIdx >= 0) gMarkedLineIdx = -1;
         renderMeme();
         return;
     }
@@ -125,9 +126,9 @@ function getRectSettings() {
     var x = selectedLine.pos.x;
     var y = selectedLine.pos.y - selectedLine.size;;
     var height = selectedLine.size + 10;
-    if (document.querySelector('input[name="text-line"]').value === ''){
+    if (document.querySelector('input[name="text-line"]').value === '') {
         var width = gElCanvas.width * 0.8;
-    } else{
+    } else {
         var width = gCtx.measureText(selectedLine.txt).width + 35;
     }
 
@@ -163,7 +164,7 @@ function drawEmoji(txt, x, y, size) {
     // gCtx.stroke()
 }
 
-function drawMeme(){
+function drawMeme() {
 
 }
 
@@ -218,7 +219,7 @@ function onAddLine() {
     renderMeme();
 }
 
-function onAddEmoji(emoji){
+function onAddEmoji(emoji) {
     var meme = getMeme();
     meme.selectedLineIdx++;
     gMarkedLineIdx = meme.selectedLineIdx;

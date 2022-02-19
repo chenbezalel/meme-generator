@@ -61,7 +61,7 @@
     .control-box {
         margin-top: 25px;
         width: 350px;
-        height: 350px;
+        height: 420px;
         padding: 10px 10px;
     }
 
@@ -89,11 +89,16 @@
     }
 
     .font-input{
-        width: 80px;
+        width: 90px;
     }
 
     .search-container {
         width: 100%;
+    }
+
+    .download{
+        width: 120px;
+        height: 45px;
     }
 
     /* Gallery */
@@ -147,7 +152,7 @@
 
     .control-box {
         width: 350px;
-        height: 400px;
+        height: 430px;
         padding: 20px 20px;
     }
 
@@ -188,7 +193,7 @@
 
     .control-box {
         width: 420px;
-        height: 420px;
+        height: 460px;
         padding: 25px 40px;
     }
 

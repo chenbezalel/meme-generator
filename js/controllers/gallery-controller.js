@@ -14,6 +14,10 @@ function onImgSelected(imgId){
     document.querySelector('.editor').style.visibility = "visible";
     document.querySelector('.gallery').style.display = "none";
     document.querySelector('input[name="search"]').value = '';
+    // document.querySelector('input[name="text-line"]').value = '';
+    // gMarkedLineIdx = 0;
+    // createMeme();
+    // getLinesPos();
     setImg(imgId);
     renderMeme();
 }

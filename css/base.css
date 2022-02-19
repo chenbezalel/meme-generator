@@ -48,6 +48,7 @@ body {
 /* editor */
 
 .editor {
+    /* display: none; */
     visibility: hidden;
     /* color: #f68699; */
 }
