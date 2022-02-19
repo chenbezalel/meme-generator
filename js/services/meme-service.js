@@ -51,7 +51,16 @@ function createImgs() {
         _createImg('images/5.jpg', ['funny', 'strong', 'child']),
         _createImg('images/6.jpg', ['funny', 'smart']),
         _createImg('images/7.jpg', ['funny', 'baby', 'child', 'surprise']),
-        _createImg('images/8.jpg', ['funny', 'listening'])
+        _createImg('images/8.jpg', ['funny', 'listening']),
+        _createImg('images/9.jpg', ['funny', 'child', 'joking', 'joke']),
+        _createImg('images/10.jpg', ['politics', 'joking', 'joke']),
+        _createImg('images/11.jpg', ['fight']),
+        _createImg('images/12.jpg', []),
+        _createImg('images/13.jpg', []),
+        _createImg('images/14.jpg', []),
+        _createImg('images/15.jpg', []),
+        _createImg('images/16.jpg', ['funny', 'politics']),
+        _createImg('images/16.jpg', ['toy']),
     ]
 }
 
