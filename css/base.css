@@ -49,6 +49,7 @@ body {
 
 .editor {
     visibility: hidden;
+    /* color: #f68699; */
 }
 
 /* .canvas-container {
