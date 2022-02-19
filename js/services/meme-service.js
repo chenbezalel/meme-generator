@@ -60,7 +60,7 @@ function createImgs() {
         _createImg('images/14.jpg', []),
         _createImg('images/15.jpg', []),
         _createImg('images/16.jpg', ['funny', 'politics']),
-        _createImg('images/16.jpg', ['toy']),
+        _createImg('images/17.jpg', ['toy']),
     ]
 }
 
