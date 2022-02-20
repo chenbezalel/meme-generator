@@ -95,6 +95,11 @@ canvas, .control-box {
     padding: 20px;
 }
 
+.line-control-btns img{
+margin: auto;
+margin-top: 3px;
+}
+
 .line-design-btns>* {
     margin: 5px 20px;
 }
