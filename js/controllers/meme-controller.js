@@ -16,7 +16,25 @@ function onInit() {
     renderGallery();
     addListeners();
     getLinesPos();
+    renderDataList();
     resizeCanvas();
+}
+
+function renderDataList(){
+    const keywords = getKeywords();
+
+    var strHtml = keywords.map(keyword => `<option value="${keyword}">`);
+    // console.log(strHtml);
+
+    document.getElementById('search').innerText = strHtml.join('');
+    console.log(document.getElementById('search').innerHTML = strHtml.join(''));
+}
+
+function cleanCanvas(){
+    gMarkedLineIdx = 0;
+    createMeme();
+    getLinesPos();
+    document.querySelector('input[name="text-line"]').value = '';
 }
 
 function addListeners() {

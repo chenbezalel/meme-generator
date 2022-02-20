@@ -13,10 +13,10 @@
 
     <header class="main-header">
         <nav class="main-nav flex space-between">
-            <div class="logo flex align-center"><img src="logo/LOGO.png" alt=""></div>
+            <div class="logo flex align-center" onclick="onShowGallery()"><img src="logo/LOGO.png" alt=""></div>
             <div class="nav-content flex space-between align-center">
                 <ul class="nav-content clean-list flex">
-                    <li onclick="onGalleryClicked()">Gallery</li>
+                    <li onclick="onShowGallery()">Gallery</li>
                     <li>Memes</li>
                     <li>About</li>
                 </ul>
@@ -32,7 +32,7 @@
                     <input onchange="onSearch()" type="search" list="search" placeholder="Search" name="search"
                         class="search-field" />
                     <datalist id="search">
-                        <option value="funny">
+                        <!-- <option value="funny">
                         <option value="politics">
                         <option value="cute">
                         <option value="pets">
@@ -42,7 +42,7 @@
                         <option value="baby">
                         <option value="sleep">
                         <option value="joking">
-                        <option value="joke">
+                        <option value="joke"> -->
                     </datalist>
                     <button type="button" class="search-button" onclick="onSearch()">
                         <img src="icons/search-icon.png">
