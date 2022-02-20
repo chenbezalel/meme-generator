@@ -27,7 +27,6 @@ function renderDataList(){
     // console.log(strHtml);
 
     document.getElementById('search').innerText = strHtml.join('');
-    console.log(document.getElementById('search').innerHTML = strHtml.join(''));
 }
 
 function cleanCanvas(){
@@ -226,6 +225,14 @@ function onChanfeFont(elFont) {
     renderMeme();
 }
 
+function onAlign(dir) {
+    var meme = getMeme()
+    var selectedLine = meme.lines[meme.selectedLineIdx];
+    var txtWidth = gCtx.measureText(selectedLine.txt).width;
+    align(dir, txtWidth, gElCanvas.width);
+    renderMeme();
+}
+
 
 function onAddLine() {
     var meme = getMeme();
@@ -255,7 +262,7 @@ function getLinesPos() {
     lines[currIdx].pos.x += 25;
 
     if (currIdx === 0) {
-        lines[currIdx].pos.y += gElCanvas.height * 0.1;
+        lines[currIdx].pos.y += gElCanvas.height * 0.2;
     } else if (currIdx === 1) {
         lines[currIdx].pos.y = gElCanvas.height * 0.9;
     } else if (currIdx === 2) {

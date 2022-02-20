@@ -152,6 +152,14 @@ function changeFont(font) {
     gMeme.lines[gMeme.selectedLineIdx].font = font;
 }
 
+function align(dir, textWidth, canvasWidth) {
+    var selectedLine = gMeme.lines[gMeme.selectedLineIdx]
+    selectedLine.align = dir;
+    if (dir === 'left') selectedLine.pos.x = 25;
+    else if (dir === 'center') selectedLine.pos.x = (canvasWidth / 2 - textWidth / 2) - 10;
+    else if (dir === 'right') selectedLine.pos.x = (canvasWidth - textWidth) - 40;
+}
+
 // function changeAlign(dir) {
 //     gMeme.lines[gMeme.selectedLineIdx].align = dir;
 // }

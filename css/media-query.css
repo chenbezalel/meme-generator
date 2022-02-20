@@ -61,12 +61,12 @@
     .control-box {
         margin-top: 25px;
         width: 350px;
-        height: 450px;
+        height: 500px;
         padding: 10px 10px;
     }
 
     .control-box .text-line {
-        height: 35px;
+        height: 50px;
         box-shadow: 1px 3px 0 #a6aaaf, inset 0 5px 0 #ffffff;
         font-size: 1.2rem;
     }
@@ -81,6 +81,7 @@
         width: 80%;
         margin: auto;
         padding: 5px;
+        height: 190px;
     }
 
     .btn, .color-input {
@@ -156,7 +157,7 @@
 
     .control-box {
         width: 350px;
-        height: 430px;
+        height: 500px;
         padding: 20px 20px;
     }
 
@@ -165,9 +166,9 @@
     }
 
     .line-design-btns {
-        width: 100%;
-        margin-right: 0;
-        height: 150px;
+        margin: auto;
+        width: 90%;
+        height: 200px;
         padding: 10px;
     }
 
@@ -197,7 +198,7 @@
 
     .control-box {
         width: 420px;
-        height: 460px;
+        height: 550px;
         padding: 25px 40px;
     }
 
@@ -208,7 +209,7 @@
     .line-design-btns {
         width: 80%;
         margin: auto;
-        height: 150px;
+        height: 200px;
         border-radius: 15px;
         background-color: rgb(228, 171, 171);
         padding: 10px;
@@ -233,5 +234,10 @@
         width: 500px;
         height: 500px;
         padding: 25px 40px;
+    }
+
+    .line-design-btns {
+        width: 90%;
+        height: 150px;
     }
 }

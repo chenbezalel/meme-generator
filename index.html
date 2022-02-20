@@ -32,17 +32,7 @@
                     <input onchange="onSearch()" type="search" list="search" placeholder="Search" name="search"
                         class="search-field" />
                     <datalist id="search">
-                        <!-- <option value="funny">
-                        <option value="politics">
-                        <option value="cute">
-                        <option value="pets">
-                        <option value="dog">
-                        <option value="love">
-                        <option value="child">
-                        <option value="baby">
-                        <option value="sleep">
-                        <option value="joking">
-                        <option value="joke"> -->
+
                     </datalist>
                     <button type="button" class="search-button" onclick="onSearch()">
                         <img src="icons/search-icon.png">
@@ -76,6 +66,9 @@
                     <button class="btn color-btn"><img src="icons/text-stroke.png" alt=""></button>
                     <input type="color" class="color-input" onchange="onChangeStroke(this)">
                 </div>
+                <button class="btn decrease-line" onclick="onAlign('left')"><img src="icons/align-to-left.png" alt=""></button>
+                <button class="btn decrease-line" onclick="onAlign('center')"><img src="icons/center-text-alignment.png" alt=""></button>
+                <button class="btn decrease-line" onclick="onAlign('right')"><img src="icons/align-to-right.png" alt=""></button>
                 <select onchange="onChanfeFont(this)" class="btn font-input" name="font">
                     <option value="impact">IMPACT</option>
                     <option value="Arial">ARIAL</option>
